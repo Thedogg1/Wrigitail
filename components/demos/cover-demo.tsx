@@ -15,7 +15,10 @@ export function CoverDemo() {
          bg-clip-text
           text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white'
       >
-        Elevate your brand with <br /> <Cover>Wrigital</Cover>
+        <Cover>
+          Are You A Financial Advisor <br />
+          Wanting Calls With High Net Worth Individuals?
+        </Cover>
       </h1>
     </div>
   );
