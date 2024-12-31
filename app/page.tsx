@@ -39,14 +39,13 @@ const services = [
     icon: '/images/content.jpg',
     title: 'Content Creation',
     description:
-      "Boost your brand's online presence with our social media marketing services",
+      'With our content creation services, we help businesses drive results',
   },
 
   {
     icon: '/images/Email.jpg',
     title: 'Email Marketing',
-    description:
-      'With our content creation services, we help businesses drive results',
+    description: 'Build and monetize a list  with our Email marketing services',
   },
 ];
 
