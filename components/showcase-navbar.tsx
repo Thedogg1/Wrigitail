@@ -27,12 +27,12 @@ xl:w-4/5
     px-4
     md:px-8
     mx-6
-    
+     bg-[url("./../public/images/tech_leads_banner_image.jpg")]
     '
     >
       <Link href='/'>
         <Image
-          src='/logo/logo-t.png'
+          src='/logo/logo-w.png'
           alt='Wrigital Logo'
           width={1000}
           height={1000}
@@ -41,15 +41,7 @@ xl:w-4/5
       </Link>
 
       <div className='absolute right-1/2 translate-x-1/2 transform'>
-        <div className='hidden md:flex gap-x-10 2xl:gap-x-10 items-center text-gray-700 font-medium text-lg '>
-          <Link
-            href='/showcase'
-            className='
-          hover:text-blue-500
-          '
-          >
-            Showcase
-          </Link>
+        <div className='hidden md:flex gap-x-10 2xl:gap-x-10 items-center text-white font-medium text-lg '>
           <Link href='/' className='hover:text-blue-500'>
             Services
           </Link>
@@ -59,7 +51,7 @@ xl:w-4/5
         </div>
       </div>
 
-      <div className='flex items-center gap-x-4'>
+      <div className='flex items-center gap-x-4 text-white'>
         <a href='tel:+447842024151' className='hidden xl:flex'>
           <button className='px-4 py-2  rounded-md flex items-center gap-x-3 '>
             +447842024151

@@ -24,26 +24,26 @@ const services = [
       'Interact with your customers and increase sales with our Linkedin lead gen service',
   },
   {
-    icon: '/images/s_6.png',
+    icon: '/images/Web Design.jpg',
     title: 'Web Design + Development',
     description:
       'Take your business to the next level with our web design and development services',
   },
   {
-    icon: '/images/s_1.png',
+    icon: '/images/SEO.jpg',
     title: 'Search Engine Optimization',
     description:
       'Get your website to the top of search engine results with our SEO services',
   },
   {
-    icon: '/images/s_5.png',
+    icon: '/images/content.jpg',
     title: 'Content Creation',
     description:
       "Boost your brand's online presence with our social media marketing services",
   },
 
   {
-    icon: '/images/s_4.png',
+    icon: '/images/Email.jpg',
     title: 'Email Marketing',
     description:
       'With our content creation services, we help businesses drive results',
@@ -63,11 +63,11 @@ bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_b
         name='top'
         className='overflow-hidden rounded-[6px] top-5 sticky md:mx-auto z-50 
    xl:w-4/5 2xl:w-[68%] bg-white flex items-center 
-   justify-between py-6 px-4 md:px-8 mx-6'
+   justify-between py-6 px-4 md:px-8 mx-6 bg-[url("./../public/images/tech_leads_banner_image.jpg")]'
       >
         <Link href={'/'}>
           <Image
-            src={'/logo/logo-t.png'}
+            src={'/logo/logo-w.png'}
             alt='Logo'
             width={1000}
             height={1000}
@@ -75,8 +75,8 @@ bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_b
           />
         </Link>
 
-        <div className='absolute right-1/2 translate-x-1/2 transform'>
-          <div className='hidden md:flex gap-x-10 items-center text-gray-700 font-medium text-lg cursor-pointer'>
+        <div className='absolute right-1/2 translate-x-1/2 transform '>
+          <div className='hidden md:flex gap-x-10 items-center text-white font-medium text-lg cursor-pointer'>
             <ScrollLink
               to='services'
               smooth={true}
@@ -95,7 +95,7 @@ bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_b
           </div>
         </div>
 
-        <div className='flex items-center gap-x-4'>
+        <div className='flex items-center gap-x-4 text-white'>
           <a href='tel: +447842024151' className='hidden lg:flex'>
             <button className='px-4 py-2 rounded-md flex items-center gap-x-3'>
               +447842024151
