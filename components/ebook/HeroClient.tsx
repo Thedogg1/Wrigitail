@@ -57,15 +57,15 @@ export const HeroClient: FC = () => {
             The digital marketing landscape for financial advisors has changed
             dramatically. In 2025, those who master these channels will acquire
             high-value clients predictably and systematically. This
-            comprehensive implementation guide reveals exactly how they're doing
-            it.
+            comprehensive implementation guide reveals exactly how they&apos;re
+            doing it.
           </p>
 
           {/* Desire & Action */}
           <div className='grid md:grid-cols-2 gap-8 max-w-4xl mx-auto'>
             <div className='bg-white rounded-xl p-8 shadow-lg'>
               <h3 className='text-xl font-bold text-gray-900 mb-6'>
-                Inside, you'll discover:
+                Inside, you&apos;ll discover:
               </h3>
               <ul className='text-left text-gray-600 space-y-4'>
                 <li className='flex items-start'>
@@ -103,8 +103,8 @@ export const HeroClient: FC = () => {
 
               <p className='text-sm text-gray-500 mt-6'>
                 Download now and book your free strategy call. In just 30
-                minutes, you'll map out your complete digital marketing plan for
-                2025.
+                minutes, you&apos;ll map out your complete digital marketing
+                plan for 2025.
               </p>
             </div>
           </div>
