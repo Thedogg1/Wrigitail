@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import { m } from 'framer-motion';
 
 const font = Space_Grotesk({ subsets: ['latin'] });
 
