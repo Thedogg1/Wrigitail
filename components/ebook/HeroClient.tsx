@@ -10,7 +10,7 @@ export const HeroClient: FC = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      'https://app.getresponse.com/view_webform_v2.js?u=example&webforms_id=e067d61d-727f-4690-bb2d-507b24ed6184';
+      'https://an.gr-wcon.com/script/30c4b5c8-da70-48a7-9a95-ae7396272f26/ga.js';
     script.async = true;
 
     if (formContainerRef.current) {
@@ -99,7 +99,10 @@ export const HeroClient: FC = () => {
               <h3 className='text-xl font-bold text-gray-900 mb-6'>
                 Get Your Free Digital Marketing Blueprint
               </h3>
-              <GetResponseForm formId='e067d61d-727f-4690-bb2d-507b24ed6184' />
+              <getresponse-form
+                form-id='e067d61d-727f-4690-bb2d-507b24ed6184'
+                e='1'
+              ></getresponse-form>
 
               <p className='text-sm text-gray-500 mt-6'>
                 Download now and book your free strategy call. In just 30

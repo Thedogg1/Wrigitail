@@ -1,18 +1,27 @@
 'use client';
+import { useEffect } from 'react';
 
 interface GetResponseFormProps {
   formId: string;
 }
 
 export const GetResponseForm: React.FC<GetResponseFormProps> = ({ formId }) => {
-  return (
-    <div
-      className='grform min-h-[300px]'
-      dangerouslySetInnerHTML={{
-        __html: `
-          <script type="text/javascript" src="<getresponse-form form-id="e067d61d-727f-4690-bb2d-507b24ed6184" e="1"></getresponse-form>"></script>
-        `,
-      }}
-    />
-  );
+  useEffect(() => {
+    // Ensure script doesn't load multiple times
+    const scriptId = `getresponse-script-${formId}`;
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = `https://app.getresponse.com/view_webform_v2.js?u=your_user_id&webforms_id=${formId}`;
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup if needed
+      document.body.removeChild(script);
+    };
+  }, [formId]);
+
+  return <div id={`gr-form-${formId}`} className='min-h-[300px]' />;
 };

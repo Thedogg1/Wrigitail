@@ -1,6 +1,7 @@
 // app/ebook/page.tsx
 import { EbookLanding } from '@/components/ebook/EbookLanding';
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Free eBook for Financial Advisors | Digital Growth Strategies',
@@ -45,5 +46,29 @@ export default function EbookPage() {
     ],
   };
 
-  return <EbookLanding {...ebookData} />;
+  return (
+    <>
+      {/* GetResponse Analytics Script */}
+      <Script
+        id='getresponse-analytics'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(m, o, n, t, e, r, _){
+                m['__GetResponseAnalyticsObject'] = e;
+                m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+                r = o.createElement(n);
+                _ = o.getElementsByTagName(n)[0];
+                r.async = 1;
+                r.src = t;
+                r.setAttribute('crossorigin', 'use-credentials');
+                _.parentNode.insertBefore(r, _);
+            })(window, document, 'script', 'https://an.gr-wcon.com/script/30c4b5c8-da70-48a7-9a95-ae7396272f26/ga.js', 'GrTracking');
+          `,
+        }}
+      />
+
+      <EbookLanding {...ebookData} />
+    </>
+  );
 }
