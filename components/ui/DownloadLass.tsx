@@ -7,8 +7,8 @@ const DownloadLaas = () => {
 
   const handleDownload = async () => {
     const link = document.createElement('a');
-    link.href = '/downloads/laas.pdf'; // Update with your actual file path
-    link.download = 'laas.pdf';
+    link.href = '/downloads/LAAS.pdf'; // Update with your actual file path
+    link.download = 'LAAS.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

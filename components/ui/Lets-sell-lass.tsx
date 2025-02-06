@@ -14,7 +14,7 @@ function LetsSellLaas() {
       <div className='md:pr-[22rem] '>
         <div className='absolute right-8 hidden md:block'>
           <Image
-            src='/images/laasppt.jpg'
+            src='/images/laas2.jpg'
             alt='financial advisor leads'
             width={300}
             height={300}
