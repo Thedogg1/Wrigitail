@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 const ThankYou = () => {
   return (
     <div className='flex items-center justify-center h-screen'>
@@ -25,7 +26,10 @@ const ThankYou = () => {
             Thank you for your interest! Check your email for a link to the
             guide.
           </p>
-          <a className='inline-flex items-center px-4 py-2 text-white bg-indigo-600 border border-indigo-600  rounded-full hover:bg-indigo-700 focus:outline-none focus:ring'>
+          <Link
+            href={'/'}
+            className='inline-flex items-center px-4 py-2 text-white bg-indigo-600 border border-indigo-600  rounded-full hover:bg-indigo-700 focus:outline-none focus:ring'
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-3 h-3 mr-2'
@@ -41,7 +45,7 @@ const ThankYou = () => {
               />
             </svg>
             <span className='text-sm font-medium'>Home</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

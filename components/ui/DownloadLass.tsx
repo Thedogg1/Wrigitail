@@ -31,6 +31,7 @@ const DownloadLaas = () => {
   return (
     <div className='flex'>
       <button
+        onClick={handleDownload}
         className='py-3 
   px-6
   mr-5
