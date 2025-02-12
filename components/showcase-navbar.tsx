@@ -40,7 +40,7 @@ xl:w-4/5
         />
       </Link>
 
-      <div className='absolute right-1/2 translate-x-1/2 transform'>
+      {/* <div className='absolute right-1/2 translate-x-1/2 transform'>
         <div className='hidden md:flex gap-x-10 2xl:gap-x-10 items-center text-white font-medium text-lg '>
           <Link href='/' className='hover:text-blue-500'>
             Services
@@ -49,16 +49,16 @@ xl:w-4/5
             Process
           </Link>
         </div>
-      </div>
+      </div> */}
 
       <div className='flex items-center gap-x-4 text-white'>
-        <a href='tel:+447842024151' className='hidden xl:flex'>
+        {/* <a href='tel:+447842024151' className='hidden xl:flex'>
           <button className='px-4 py-2  rounded-md flex items-center gap-x-3 '>
             +447842024151
           </button>
-        </a>
+        </a> */}
 
-        <Link
+        {/* <Link
           href={'/downloads/laas.pdf'}
           className='py-3 px-6
       text-lg
@@ -74,7 +74,7 @@ xl:w-4/5
        hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] '
         >
           Download Your Free Guide
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
