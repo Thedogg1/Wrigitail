@@ -66,7 +66,7 @@ This is initial intake data only - your prompt chain will expand on this informa
         to: ['terry@wrigitail.com'],
         subject: emailSubject,
         text: emailBody,
-        reply_to: formData.email
+        replyTo: formData.email
       });
       console.log('✅ Email sent successfully to terry@wrigitail.com');
     } catch (emailError) {

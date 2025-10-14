@@ -91,7 +91,7 @@ export default function FinancialInsightsIntakePage() {
             Get Your Personalized Financial Strategy Report
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
-            Complete this quick intake form before our consultation call. We'll discuss details 
+            Complete this quick intake form before our consultation call. We&apos;ll discuss details 
             during our conversation - just provide the basics here.
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-3xl mx-auto mb-6">
@@ -390,7 +390,7 @@ export default function FinancialInsightsIntakePage() {
                     placeholder="Example: I want to plan my company's exit within 12-18 months while reducing my concentration risk and addressing my $4.2M annual tax burden, but I also need to protect $120M in business value for my family's future."
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Describe your main goals, concerns, and timeline in your own words - we'll explore details in our consultation
+                    Describe your main goals, concerns, and timeline in your own words - we&apos;ll explore details in our consultation
                   </p>
                 </div>
 
@@ -403,11 +403,11 @@ export default function FinancialInsightsIntakePage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                      <span>We'll generate your personalized report using institutional-grade formulas</span>
+                      <span>We&apos;ll generate your personalized report using institutional-grade formulas</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                      <span>You'll receive your comprehensive analysis within 1-2 business days</span>
+                      <span>You&apos;ll receive your comprehensive analysis within 1-2 business days</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
@@ -435,7 +435,7 @@ export default function FinancialInsightsIntakePage() {
                       Your information has been successfully submitted.
                     </p>
                     <p className="text-sm text-green-700">
-                      We'll review your information and be in touch shortly to schedule your 
+                      We&apos;ll review your information and be in touch shortly to schedule your 
                       personalized financial strategy consultation.
                     </p>
                     <p className="text-sm text-green-600 mt-4">
