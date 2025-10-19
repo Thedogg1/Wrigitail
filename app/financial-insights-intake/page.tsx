@@ -41,6 +41,7 @@ export default function FinancialInsightsIntakePage() {
     'idle' | 'success' | 'error'
   >('idle');
   const [currentStep, setCurrentStep] = useState(1);
+  const [validationError, setValidationError] = useState('');
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -49,10 +50,92 @@ export default function FinancialInsightsIntakePage() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setValidationError(''); // Clear error when user types
+  };
+
+  // Validation for each step
+  const validateStep = (step: number): boolean => {
+    setValidationError('');
+
+    if (step === 1) {
+      if (!formData.name.trim()) {
+        setValidationError('Please enter your full name');
+        return false;
+      }
+      if (!formData.email.trim()) {
+        setValidationError('Please enter your email address');
+        return false;
+      }
+      if (!formData.industry) {
+        setValidationError('Please select your industry');
+        return false;
+      }
+      if (!formData.businessValue || parseFloat(formData.businessValue) <= 0) {
+        setValidationError('Please enter your business valuation');
+        return false;
+      }
+      if (!formData.ownershipPercentage || parseFloat(formData.ownershipPercentage) <= 0) {
+        setValidationError('Please enter your ownership percentage');
+        return false;
+      }
+      if (!formData.exitTimeline) {
+        setValidationError('Please select your exit timeline');
+        return false;
+      }
+    }
+
+    if (step === 2) {
+      if (!formData.netWorth || parseFloat(formData.netWorth) <= 0) {
+        setValidationError('Please enter your total net worth');
+        return false;
+      }
+      if (!formData.annualIncome || parseFloat(formData.annualIncome) <= 0) {
+        setValidationError('Please enter your annual income');
+        return false;
+      }
+      if (!formData.annualTaxBurden || parseFloat(formData.annualTaxBurden) <= 0) {
+        setValidationError('Please enter your annual tax burden');
+        return false;
+      }
+      if (!formData.liquidCash || parseFloat(formData.liquidCash) <= 0) {
+        setValidationError('Please enter your liquid cash & assets');
+        return false;
+      }
+      if (!formData.annualLifestyle || parseFloat(formData.annualLifestyle) <= 0) {
+        setValidationError('Please enter your annual lifestyle expenses');
+        return false;
+      }
+    }
+
+    if (step === 3) {
+      if (!formData.primaryGoal.trim()) {
+        setValidationError('Please describe your primary objective');
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const handleNextStep = () => {
+    if (validateStep(currentStep)) {
+      setCurrentStep((prev) => prev + 1);
+    }
+  };
+
+  const handlePreviousStep = () => {
+    setValidationError('');
+    setCurrentStep((prev) => prev - 1);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Final validation check
+    if (!validateStep(3)) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -591,12 +674,24 @@ export default function FinancialInsightsIntakePage() {
             </motion.div>
           )}
 
+          {/* Validation Error Message */}
+          {validationError && (
+            <div className='bg-red-50 border border-red-200 rounded-lg p-4'>
+              <div className='flex items-center gap-3'>
+                <AlertCircle className='h-5 w-5 text-red-600 flex-shrink-0' />
+                <p className='text-sm text-red-800 font-medium'>
+                  {validationError}
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Navigation Buttons */}
           <div className='flex items-center justify-between pt-6'>
             {currentStep > 1 && (
               <button
                 type='button'
-                onClick={() => setCurrentStep((prev) => prev - 1)}
+                onClick={handlePreviousStep}
                 className='px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold transition-colors'
               >
                 Previous
@@ -606,7 +701,7 @@ export default function FinancialInsightsIntakePage() {
             {currentStep < totalSteps && (
               <button
                 type='button'
-                onClick={() => setCurrentStep((prev) => prev + 1)}
+                onClick={handleNextStep}
                 className='ml-auto px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 font-semibold transition-colors'
               >
                 Next Step
