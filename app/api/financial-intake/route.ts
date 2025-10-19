@@ -7,22 +7,27 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.json();
 
-    // Format the data simply for the prompt chain
-    const promptInput = `
-New Financial Insights Client Intake:
-
-Name: ${formData.name}
+    // Format the data to match JavaScript parser in prompt-chain-auto
+    const promptInput = `Client Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone || 'Not provided'}
-
 Industry: ${formData.industry}
 Business Valuation: $${parseFloat(formData.businessValue || 0).toLocaleString()}
-Ownership Percentage: ${formData.ownershipPercentage}%
+Your Ownership Stake: ${formData.ownershipPercentage}%
 Exit Timeline: ${formData.exitTimeline}
-
-Total Net Worth: $${parseFloat(formData.netWorth || 0).toLocaleString()}
-Annual Income: $${parseFloat(formData.annualIncome || 0).toLocaleString()}
-Annual Tax Burden: $${parseFloat(formData.annualTaxBurden || 0).toLocaleString()}
+Net Worth (excluding business): $${parseFloat(
+      formData.netWorth || 0
+    ).toLocaleString()}
+Annual Personal Income: $${parseFloat(
+      formData.annualIncome || 0
+    ).toLocaleString()}
+Annual Tax Burden: $${parseFloat(
+      formData.annualTaxBurden || 0
+    ).toLocaleString()}
+Liquid Cash & Assets: $${parseFloat(formData.liquidCash || 0).toLocaleString()}
+Annual Lifestyle Expenses: $${parseFloat(
+      formData.annualLifestyle || 0
+    ).toLocaleString()}
 
 Primary Goal:
 ${formData.primaryGoal}
@@ -33,7 +38,7 @@ Submission Date: ${new Date().toLocaleString()}
 
     // Email subject
     const emailSubject = `New Financial Insights Intake: ${formData.name} - ${formData.industry}`;
-    
+
     // Email body for Terry
     const emailBody = `
 NEW FINANCIAL INSIGHTS INTAKE SUBMISSION
@@ -66,7 +71,7 @@ This is initial intake data only - your prompt chain will expand on this informa
         to: ['terry@wrigitail.com'],
         subject: emailSubject,
         text: emailBody,
-        replyTo: formData.email
+        replyTo: formData.email,
       });
       console.log('✅ Email sent successfully to terry@wrigitail.com');
     } catch (emailError) {
@@ -78,16 +83,15 @@ This is initial intake data only - your prompt chain will expand on this informa
     return NextResponse.json({
       success: true,
       message: 'Form submitted successfully',
-      formattedOutput: promptInput
+      formattedOutput: promptInput,
     });
-
   } catch (error) {
     console.error('Error processing form submission:', error);
     return NextResponse.json(
-      { 
-        success: false, 
+      {
+        success: false,
         message: 'Failed to process submission',
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : 'Unknown error',
       },
       { status: 500 }
     );
